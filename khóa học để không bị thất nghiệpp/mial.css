@@ -1,0 +1,180 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f5f6fa;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(90deg, #007bff, #6f42c1);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.product {
+  background: rgb(243, 245, 240);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product h2 {
+  font-size: 18px;
+  color: #6f42c1;
+}
+
+.product p {
+  color: #666;
+}
+
+.add-to-cart {
+  background: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+  background: #218838;
+}
+
+#cart-container {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  width: 300px;
+  background: #fff;
+  border: 3px solid #fd7e14;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+#cart-container h2 {
+  color: #fd7e14;
+}
+
+#cart-items {
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0;
+}
+
+#cart-items li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #ccc;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+#checkout {
+  background-color: #ffc107;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  font-weight: bold;
+  color: #333;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#checkout:hover {
+  background-color: #e0a800;
+}
+
+footer {
+  background: #343a40;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+.toast-message {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.toast-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.remove-btn {
+  background: none;
+  color: red;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  top: -30px;
+  left: 10px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
